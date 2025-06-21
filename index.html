@@ -43,22 +43,21 @@
     </a>
   </div>
 
-  <script>
-  // only on mobile widths
+ <script>
+  // Only run on narrow (mobile) screens
   if (window.matchMedia("(max-width: 768px)").matches) {
     const panels = document.querySelectorAll('.panel');
-    const io = new IntersectionObserver((entries, obs) => {
+    const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          obs.unobserve(entry.target);
-        }
+        // When panel enters or leaves view, toggle .active
+        entry.target.classList.toggle('active', entry.isIntersecting);
       });
     }, { threshold: 0.2 });
 
     panels.forEach(panel => io.observe(panel));
   }
 </script>
+
   
 </body>
 </html>
