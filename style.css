@@ -221,7 +221,7 @@ body {
   background-size: cover;
   background-position: center;
   transform: translateY(100%);/* start off-screen below */
-  transition: transform 0.6s ease;
+  transition: transform 0.8s ease;
   z-index: 1;                 /* below your .label (z-index:2) */
 }
 
