@@ -265,7 +265,6 @@ body {
 
 */
 
-
 @media (max-width: 768px) {
   /* 1) Stack panels vertically */
   .container {
@@ -275,7 +274,7 @@ body {
   .panel {
     flex: none;
     width: 100%;
-    height: 50vh;               /* adjust as you like */
+    height: 50vh;
     border-left: none;
     border-top: 1px solid #e0e0e0;
     overflow: hidden;
@@ -285,7 +284,7 @@ body {
     border-top: none;
   }
 
-  /* 2) Always-visible label in BLACK on white bg */
+  /* 2) Labels always visible in black on white */
   .panel .label {
     position: absolute;
     z-index: 2;
@@ -294,11 +293,11 @@ body {
     color: #000;
     opacity: 1;
     pointer-events: none;
-    font-size: 1.2rem;           /* scale down a bit */
+    font-size: 1.2rem;
     transition: color 0.3s ease;
   }
 
-  /* 3) Slide-in background via ::before */
+  /* 3) Pseudo‐element holds your image, off-screen below */
   .panel::before {
     content: "";
     position: absolute;
@@ -309,15 +308,15 @@ body {
     transition: transform 0.8s ease;
     z-index: 1;
   }
-  /* your four images */
+  /* assign the four images */
   #about::before   { background-image: url("about4.JPG"); }
   #art::before     { background-image: url("art2.jpg"); }
   #blog::before    { background-image: url("blog5.JPG"); }
   #contact::before { background-image: url("contact2.JPG"); }
 
-  /* 4) As soon as .active arrives, slide in and flip label to white */
+  /* 4) Toggle .active to slide in the image and flip the label to white */
   .panel.active::before {
-    transform: translateY(0);
+    transform: translateY(0) !important; /* override any earlier rules */
   }
   .panel.active .label {
     color: #fff;
