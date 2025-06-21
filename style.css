@@ -299,20 +299,22 @@ body {
   }
 
   /* default label: dark on white */
+  /* 1) Always show the label */
   .panel .label {
+    display: block !important;     /* override any hiding */
     position: absolute;
     z-index: 2;
     bottom: 10px;
     right: 10px;
-    color: #000;        /* black text before reveal */
-    opacity: 1;
+    color: #000 !important;        /* black on white background */
+    opacity: 1 !important;
     pointer-events: none;
     transition: color 0.3s, opacity 0.3s;
   }
 
-  /* once panel is active (image revealed), flip to white */
+  /* 2) Once active (image revealed), flip to white */
   .panel.active .label {
-    color: #fff;
-    opacity: 0.8;
+    color: #fff !important;
+    opacity: 0.8 !important;
   }
 }
