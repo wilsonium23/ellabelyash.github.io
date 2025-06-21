@@ -298,11 +298,21 @@ body {
     transform: translateY(0);
   }
 
-  /* label styling stays on top */
-  .label {
-    position: absolute; z-index: 2;
-    bottom: 10px; right: 10px;
-    color: white; opacity: .8;
+  /* default label: dark on white */
+  .panel .label {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    right: 10px;
+    color: #000;        /* black text before reveal */
+    opacity: 1;
     pointer-events: none;
+    transition: color 0.3s, opacity 0.3s;
+  }
+
+  /* once panel is active (image revealed), flip to white */
+  .panel.active .label {
+    color: #fff;
+    opacity: 0.8;
   }
 }
