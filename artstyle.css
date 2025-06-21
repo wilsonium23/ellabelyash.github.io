@@ -101,17 +101,4 @@
   color: #000;
 }
 
-/* ─── HEADINGS ───────────────────────────────────────────── */
-h1 {
-  position: relative;
-  margin: 60px;
-}
 
-
-/* Full-width testimonial */
-.testimonial {
-  background: #222;
-  color: #eee;
-  text-align: center;
-  padding: 4rem 2rem;
-}
