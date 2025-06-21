@@ -51,7 +51,7 @@
         // add .active when IN VIEW, remove when OUT
         entry.target.classList.toggle('active', entry.isIntersecting);
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.5 });
 
     panels.forEach(panel => io.observe(panel));
   }
