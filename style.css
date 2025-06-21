@@ -60,19 +60,19 @@ body, html {
 
 /* Add background images on hover */
 #about:hover {
-  background-image: url('about4.JPG');
+  background-image: url("about4.JPG");
 }
 
 #art:hover {
-  background-image: url('art2.jpg');
+  background-image: url("art2.jpg");
 }
 
 #blog:hover {
-  background-image: url('blog5.JPG');
+  background-image: url("blog5.JPG");
 }
 
 #contact:hover {
-  background-image: url('contact2.JPG');
+  background-image: url("contact2.JPG");
 }
 
 /* Optional: fade-in effect */
