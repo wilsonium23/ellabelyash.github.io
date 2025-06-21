@@ -314,10 +314,10 @@ body {
     z-index: 1;
   }
   /* your four images (you can leave these outside the media-query too) */
-  #about::before   { background-image: url("../images/about4.JPG"); }
-  #art::before     { background-image: url("../images/art2.jpg"); }
-  #blog::before    { background-image: url("../images/blog5.JPG"); }
-  #contact::before { background-image: url("../images/contact2.JPG"); }
+  #about::before   { background-image: url("about4.JPG"); }
+  #art::before     { background-image: url("art2.jpg"); }
+  #blog::before    { background-image: url("blog5.JPG"); }
+  #contact::before { background-image: url("contact2.JPG"); }
 
   /* 4) When .active is toggled, slide it up AND flip the label to white */
   .panel.active::before {
