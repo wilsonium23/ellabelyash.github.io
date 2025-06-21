@@ -191,6 +191,21 @@ body {
 
 */
 
+/* ART slides _down_ instead */
+#art::before {
+  transform: translateY(-100%);
+}
+#art:hover::before {
+  transform: translateY(0);
+}
+
+#contact::before {
+  transform: translateY(-100%);
+}
+#contact:hover::before {
+  transform: translateY(0);
+}
+
 
 .panel {
   position: relative;   /* already the case */
