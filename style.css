@@ -62,7 +62,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #fff;
+  background-image: url("watercolorpaper.jpg");
   transition: background-image 0.5s ease, background-color 0.5s ease;
   background-size: cover;
   background-position: center;
