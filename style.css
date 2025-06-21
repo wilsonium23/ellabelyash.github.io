@@ -7,6 +7,24 @@
 /* ─── NAVBAR ───────────────────────────────────────────────── */
 .nav-list { display: none !important; }
 
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;                      /* space between items */
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #000;
+}
+
 /* the hamburger button */
 .hamburger {
   font-family: "Raleway", sans-serif;
@@ -89,23 +107,8 @@
   padding: 0.5rem 0;          /* center vertically */
 }
 
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 2rem;                      /* space between items */
-}
 
-.nav-list a {
-  text-decoration: none;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-.nav-list a:hover {
-  color: #000;
-}
+/* ─── BODY ───────────────────────────────────────────── */
 
 body, html {
   height: 100%;
