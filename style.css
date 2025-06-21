@@ -183,19 +183,19 @@ body {
 
 /* Add background images on hover 
 #about:hover {
-  background-image: url('../images/about4.jpg');
+  background-image: url("about4.JPG");
 }
 
 #art:hover {
-  background-image: url('../images/art2.jpg');
+  background-image: url("art2.jpg");
 }
 
 #blog:hover {
-  background-image: url('../images/blog5.jpg');
+  background-image: url("blog5.JPG");
 }
 
 #contact:hover {
-  background-image: url('../images/contact2.jpg');
+  background-image: url("contact2.JPG");
 }
 
 */
