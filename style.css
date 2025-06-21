@@ -273,6 +273,11 @@ body {
     flex-direction: column;
     height: auto;
   }
+
+  /* shrink the logo text on mobile only */
+  .brand a {
+    font-size: 22px; 
+  }
   .panel {
     flex: none;
     width: 100%;
