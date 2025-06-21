@@ -310,10 +310,10 @@ body {
     z-index: 1;
   }
   /* your four images */
-  #about::before   { background-image: url("../images/about4.JPG"); }
-  #art::before     { background-image: url("../images/art2.jpg"); }
-  #blog::before    { background-image: url("../images/blog5.JPG"); }
-  #contact::before { background-image: url("../images/contact2.JPG"); }
+  #about::before   { background-image: url("about4.JPG"); }
+  #art::before     { background-image: url("art2.jpg"); }
+  #blog::before    { background-image: url("blog5.JPG"); }
+  #contact::before { background-image: url("contact2.JPG"); }
 
   /* 4) As soon as .active arrives, slide in and flip label to white */
   .panel.active::before {
