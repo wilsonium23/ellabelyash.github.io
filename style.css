@@ -266,55 +266,60 @@ body {
 */
 
 
-/* MOBILE ONLY: hide hover reveal, use scroll reveal instead */
 @media (max-width: 768px) {
-  /* always stack */
-  .container { flex-direction: column; height: auto; }
-  .panel {
-    flex: none; width:100%; height:50vh;
-    border-left: none; border-top:1px solid #e0e0e0;
-    overflow: hidden; position: relative;
+  /* 1) Stack panels vertically */
+  .container {
+    flex-direction: column;
+    height: auto;
   }
-  .panel:first-child { border-top:none; }
+  .panel {
+    flex: none;
+    width: 100%;
+    height: 50vh;               /* adjust as you like */
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+    overflow: hidden;
+    position: relative;
+  }
+  .panel:first-child {
+    border-top: none;
+  }
 
-  /* initial state: image layer is off-screen */
+  /* 2) Always-visible label in BLACK on white bg */
+  .panel .label {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    right: 10px;
+    color: #000;
+    opacity: 1;
+    pointer-events: none;
+    font-size: 1.2rem;           /* scale down a bit */
+    transition: color 0.3s ease;
+  }
+
+  /* 3) Slide-in background via ::before */
   .panel::before {
     content: "";
-    position: absolute; inset: 0;
-    background-size: cover; background-position: center;
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
     transform: translateY(100%);
     transition: transform 0.8s ease;
     z-index: 1;
   }
-
-  /* load your four images here */
+  /* your four images */
   #about::before   { background-image: url("../images/about4.JPG"); }
   #art::before     { background-image: url("../images/art2.jpg"); }
   #blog::before    { background-image: url("../images/blog5.JPG"); }
   #contact::before { background-image: url("../images/contact2.JPG"); }
 
-  /* when JS adds .active, slide it in */
+  /* 4) As soon as .active arrives, slide in and flip label to white */
   .panel.active::before {
     transform: translateY(0);
   }
-
-  /* default label: dark on white */
-  /* 1) Always show the label */
-  .panel .label {
-    display: block !important;     /* override any hiding */
-    position: absolute;
-    z-index: 2;
-    bottom: 10px;
-    right: 10px;
-    color: #000 !important;        /* black on white background */
-    opacity: 1 !important;
-    pointer-events: none;
-    transition: color 0.3s, opacity 0.3s;
-  }
-
-  /* 2) Once active (image revealed), flip to white */
   .panel.active .label {
-    color: #fff !important;
-    opacity: 0.8 !important;
+    color: #fff;
   }
 }
