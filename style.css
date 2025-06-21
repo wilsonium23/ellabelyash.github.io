@@ -82,7 +82,7 @@
 .brand a {
   font-family: "Raleway", sans-serif;
   font-weight: 600;           /* same as menu items */
-  font-size: 1rem;            /* match your nav font-size */
+  font-size: 28px;            /* match your nav font-size */
   color: #333;
   text-decoration: none;      /* remove underline */
   line-height: 1;
