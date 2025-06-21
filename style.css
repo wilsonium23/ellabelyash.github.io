@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: pink;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #fff;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border-left: 1px solid #e0e0e0;
+}
+
+.panel:first-child {
+  border-left: none;
+}
+
+.label {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  color: #000;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: right;
+  background-color: transparent;
+  z-index: 2;
+  font-family: "Raleway";
+}
+
+.panel:hover .label {
+  color: white;
+  font-size: 30px; 
+  opacity: 0.7;
+  bottom: 30px;
+  left: 20px;
+  text-align: left;
+}
+
+/* Add background images on hover */
+#about:hover {
+  background-image: url('../images/about4.jpg');
+}
+
+#art:hover {
+  background-image: url('../images/art2.jpg');
+}
+
+#blog:hover {
+  background-image: url('../images/blog5.jpg');
+}
+
+#contact:hover {
+  background-image: url('../images/contact2.jpg');
+}
+
+/* Optional: fade-in effect */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255,255,255,0.6);
+  transition: opacity 0.6s ease;
+  z-index: 1;
+}
+
+.panel:hover::after {
+  opacity: 0;
+}
