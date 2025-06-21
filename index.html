@@ -43,5 +43,20 @@
     </a>
   </div>
 
+  <script>
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    document.querySelectorAll('.panel').forEach(panel => {
+      panel.addEventListener('click', function(e) {
+        // if not already revealed, stop navigation and reveal instead
+        if (!this.classList.contains('active')) {
+          e.preventDefault();
+          this.classList.add('active');
+        }
+        // if it *is* already active, let the click go through and navigate
+      });
+    });
+  }
+</script>
+  
 </body>
 </html>
