@@ -100,3 +100,11 @@
 .nav-list a:hover {
   color: #000;
 }
+
+/* Full-width testimonial */
+.testimonial {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 4rem 2rem;
+}
