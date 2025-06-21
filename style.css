@@ -266,36 +266,44 @@ body {
 */
 
 
-/* at the bottom of style.css */
+
 @media (max-width: 768px) {
+  /* 1. Stack panels vertically */
   .container {
     flex-direction: column;
-    height: auto;                /* let content grow & scroll */
+    height: auto;       /* page scrolls instead of being fixed */
   }
-
   .panel {
-    flex: none;                  /* don’t stretch equally */
-    width: 100%;                 /* full width */
-    height: 50vh;                /* or “60vw” if you prefer square-ish */
-    border-left: none;           /* remove vertical divider */
+    flex: none;         /* don’t stretch equally any more */
+    width: 100%;        /* full-width row */
+    height: 50vh;       /* adjust to taste (50% viewport height) */
+    border-left: none;  /* remove vertical divider */
     border-top: 1px solid #e0e0e0;
   }
   .panel:first-child {
     border-top: none;
   }
-}
 
-
-@media (max-width: 768px) {
-  /* ...stacking rules from above... */
-
+  /* 2. Show the images directly (no hover) */
   #about   { background-image: url("../images/about4.JPG"); }
   #art     { background-image: url("../images/art2.jpg"); }
   #blog    { background-image: url("../images/blog5.JPG"); }
   #contact { background-image: url("../images/contact2.JPG"); }
 
+  /* keep sizing/positioning */
   .panel {
     background-size: cover;
     background-position: center;
   }
+
+  /* 3. Labels stay visible & readable */
+  .label {
+    color: white;      /* or black, whatever contrasts best */
+    opacity: 0.8;
+    bottom: 10px;      /* tweak for smaller panels */
+    right: 10px;
+    left: auto;        /* reset any desktop-only left shift */
+    text-align: right;
+  }
 }
+
