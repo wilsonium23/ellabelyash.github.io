@@ -207,12 +207,18 @@ body {
   z-index: 1;                 /* below your .label (z-index:2) */
 }
 
-#about::before  { background-image: url("about4.JPG"); }
-#art::before    { background-image: url("art2.jpg"); }
-#blog::before   { background-image: url("blog5.JPG"); }
-#contact::before{ background-image: url("contact2.JPG"); }
-
-
+#about::before {
+  background-image: url("about4.JPG");
+}
+#art::before {
+  background-image: url("art2.jpg");
+}
+#blog::before {
+  background-image: url("blog5.JPG");
+}
+#contact::before {
+  background-image: url("contact2.JPG");
+}
 
 /* Optional: fade-in effect
 .panel::after {
