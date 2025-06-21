@@ -58,8 +58,20 @@
 }
 
 /* show menu on hover of the whole dropdown area */
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
+
+.dropdown-menu {
+  display: none;
+}
+
+/* show on desktop hover */
+@media (hover: hover) {
+  .dropdown:hover .dropdown-menu {
+  display: block;
+}
+}
+
+/* show when JS has toggled “open” (mobile tap) */
+.dropdown-menu.open {
   display: block;
 }
 
@@ -252,3 +264,38 @@ body {
 }
 
 */
+
+
+/* at the bottom of style.css */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;                /* let content grow & scroll */
+  }
+
+  .panel {
+    flex: none;                  /* don’t stretch equally */
+    width: 100%;                 /* full width */
+    height: 50vh;                /* or “60vw” if you prefer square-ish */
+    border-left: none;           /* remove vertical divider */
+    border-top: 1px solid #e0e0e0;
+  }
+  .panel:first-child {
+    border-top: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* ...stacking rules from above... */
+
+  #about   { background-image: url("../images/about4.JPG"); }
+  #art     { background-image: url("../images/art2.jpg"); }
+  #blog    { background-image: url("../images/blog5.JPG"); }
+  #contact { background-image: url("../images/contact2.JPG"); }
+
+  .panel {
+    background-size: cover;
+    background-position: center;
+  }
+}
