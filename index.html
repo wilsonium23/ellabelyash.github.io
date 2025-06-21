@@ -44,17 +44,19 @@
   </div>
 
   <script>
+  // only on mobile widths
   if (window.matchMedia("(max-width: 768px)").matches) {
-    document.querySelectorAll('.panel').forEach(panel => {
-      panel.addEventListener('click', function(e) {
-        // if not already revealed, stop navigation and reveal instead
-        if (!this.classList.contains('active')) {
-          e.preventDefault();
-          this.classList.add('active');
+    const panels = document.querySelectorAll('.panel');
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
         }
-        // if it *is* already active, let the click go through and navigate
       });
-    });
+    }, { threshold: 0.2 });
+
+    panels.forEach(panel => io.observe(panel));
   }
 </script>
   
