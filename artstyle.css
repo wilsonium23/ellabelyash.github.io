@@ -100,3 +100,8 @@
 .nav-list a:hover {
   color: #000;
 }
+
+/* ─── HEADINGS ───────────────────────────────────────────── */
+h2 {
+  position: relative;
+}
