@@ -286,16 +286,23 @@ body {
 
   /* 2) Labels always visible in black on white */
   .panel .label {
+    display: block !important;         /* make sure they render */
+    visibility: visible !important;    /* ensure they aren’t hidden */
+    opacity: 1 !important;             /* fully opaque */
+    z-index: 10 !important;            /* above the image (which is z-index:1) */
     position: absolute;
-    z-index: 2;
     bottom: 10px;
     right: 10px;
-    color: #000;
-    opacity: 1;
+    color: #000 !important;            /* black on white panel */
     pointer-events: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
   }
+    /* When .active flips in, switch to white: */
+  .panel.active .label {
+    color: #fff !important;
+  }
+}
 
   /* 3) Pseudo‐element holds your image, off-screen below */
   .panel::before {
