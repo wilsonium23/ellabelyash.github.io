@@ -201,19 +201,21 @@ body {
 */
 
 
-/* ART slides _down_ instead */
-#art::before {
-  transform: translateY(-100%);
-}
-#art:hover::before {
-  transform: translateY(0);
-}
+@media (hover: hover) {
+  /* only on desktop/hover devices do art+contact slide _down_ */
+  #art::before {
+    transform: translateY(-100%);
+  }
+  #art:hover::before {
+    transform: translateY(0);
+  }
 
-#contact::before {
-  transform: translateY(-100%);
-}
-#contact:hover::before {
-  transform: translateY(0);
+  #contact::before {
+    transform: translateY(-100%);
+  }
+  #contact:hover::before {
+    transform: translateY(0);
+  }
 }
 
 .panel {
@@ -286,46 +288,42 @@ body {
 
   /* 2) Labels always visible in black on white */
   .panel .label {
-    display: block !important;         /* make sure they render */
-    visibility: visible !important;    /* ensure they aren’t hidden */
-    opacity: 1 !important;             /* fully opaque */
-    z-index: 10 !important;            /* above the image (which is z-index:1) */
+    display: block !important;
+    visibility: visible !important;
     position: absolute;
+    z-index: 10 !important;
     bottom: 10px;
     right: 10px;
-    color: #000 !important;            /* black on white panel */
+    color: #000 !important;
+    opacity: 1 !important;
     pointer-events: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
   }
-    /* When .active flips in, switch to white: */
-  .panel.active .label {
-    color: #fff !important;
-  }
-}
 
-  /* 3) Pseudo‐element holds your image, off-screen below */
+  /* 3) Pseudo‐element for the image, forced off-screen below */
   .panel::before {
     content: "";
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    transform: translateY(100%);
+    /* this !important overrides the desktop #art/#contact rules */
+    transform: translateY(100%) !important;
     transition: transform 0.8s ease;
     z-index: 1;
   }
-  /* assign the four images */
-  #about::before   { background-image: url("about4.JPG"); }
-  #art::before     { background-image: url("art2.jpg"); }
-  #blog::before    { background-image: url("blog5.JPG"); }
-  #contact::before { background-image: url("contact2.JPG"); }
+  /* your four images (you can leave these outside the media-query too) */
+  #about::before   { background-image: url("../images/about4.JPG"); }
+  #art::before     { background-image: url("../images/art2.jpg"); }
+  #blog::before    { background-image: url("../images/blog5.JPG"); }
+  #contact::before { background-image: url("../images/contact2.JPG"); }
 
-  /* 4) Toggle .active to slide in the image and flip the label to white */
+  /* 4) When .active is toggled, slide it up AND flip the label to white */
   .panel.active::before {
-    transform: translateY(0) !important; /* override any earlier rules */
+    transform: translateY(0) !important;
   }
   .panel.active .label {
-    color: #fff;
+    color: #fff !important;
   }
 }
