@@ -266,44 +266,43 @@ body {
 */
 
 
-
+/* MOBILE ONLY: hide hover reveal, use scroll reveal instead */
 @media (max-width: 768px) {
-  /* 1. Stack panels vertically */
-  .container {
-    flex-direction: column;
-    height: auto;       /* page scrolls instead of being fixed */
-  }
+  /* always stack */
+  .container { flex-direction: column; height: auto; }
   .panel {
-    flex: none;         /* don’t stretch equally any more */
-    width: 100%;        /* full-width row */
-    height: 50vh;       /* adjust to taste (50% viewport height) */
-    border-left: none;  /* remove vertical divider */
-    border-top: 1px solid #e0e0e0;
+    flex: none; width:100%; height:50vh;
+    border-left: none; border-top:1px solid #e0e0e0;
+    overflow: hidden; position: relative;
   }
-  .panel:first-child {
-    border-top: none;
-  }
+  .panel:first-child { border-top:none; }
 
-  /* 2. Show the images directly (no hover) */
-  #about   { background-image: url("../images/about4.JPG"); }
-  #art     { background-image: url("../images/art2.jpg"); }
-  #blog    { background-image: url("../images/blog5.JPG"); }
-  #contact { background-image: url("../images/contact2.JPG"); }
-
-  /* keep sizing/positioning */
-  .panel {
-    background-size: cover;
-    background-position: center;
+  /* initial state: image layer is off-screen */
+  .panel::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transform: translateY(100%);
+    transition: transform 0.8s ease;
+    z-index: 1;
   }
 
-  /* 3. Labels stay visible & readable */
+  /* load your four images here */
+  #about::before   { background-image: url("../images/about4.JPG"); }
+  #art::before     { background-image: url("../images/art2.jpg"); }
+  #blog::before    { background-image: url("../images/blog5.JPG"); }
+  #contact::before { background-image: url("../images/contact2.JPG"); }
+
+  /* when JS adds .active, slide it in */
+  .panel.active::before {
+    transform: translateY(0);
+  }
+
+  /* label styling stays on top */
   .label {
-    color: white;      /* or black, whatever contrasts best */
-    opacity: 0.8;
-    bottom: 10px;      /* tweak for smaller panels */
-    right: 10px;
-    left: auto;        /* reset any desktop-only left shift */
-    text-align: right;
+    position: absolute; z-index: 2;
+    bottom: 10px; right: 10px;
+    color: white; opacity: .8;
+    pointer-events: none;
   }
 }
-
