@@ -3,7 +3,7 @@
 
 /* the hamburger button */
 .hamburger {
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-size: 1.5rem;
   background: none;
   border: none;
@@ -41,10 +41,11 @@
 .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1rem;
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-weight: 600;
   color: #333;
   text-decoration: none;
+  letter-spacing: 3px;
 }
 
 .dropdown-menu li a:hover {
@@ -65,22 +66,23 @@
   top: 0; left: 0;
   width: 100%;
   height: 60px;
-  background: rgba(255,255,255,0.95);
   padding: 0 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 10;
+  background-color: white;
 }
 
 /* ─── BRAND ───────────────────────────────────────────── */
 
 .brand a {
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-weight: 500;           /* same as menu items */
   font-size: 28px;            /* match your nav font-size */
   color: #333;
   text-decoration: none;      /* remove underline */
   line-height: 1;
   padding: 0.5rem 0;          /* center vertically */
+  letter-spacing: 5px;
 }
 
 .nav-list {
@@ -91,7 +93,7 @@
 
 .nav-list a {
   text-decoration: none;
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-weight: 600;
   color: #333;
   transition: color 0.2s ease;
@@ -101,4 +103,121 @@
   color: #000;
 }
 
+/* Hero fills full width, centered content */
+.hero {
+  height: 60vh;
+  background: url("../images/paint1.gif") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+}
 
+/* Two-column intro */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+/* ─── ART CONTENT FLEX LAYOUT ───────────────────────────────── */
+.art-content {
+  display: flex;
+  align-items: stretch;  /* make left match the GIF’s height */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* LEFT COLUMN: stack heading & description */
+.left {
+  flex: 1;
+  position: relative;    /* <— important */
+  padding-right: 1rem;   /* optional breathing room */
+}
+
+/* then force the description down */
+.desc-text {
+  margin-top: auto;         /* pushes itself to the bottom of .left */
+}
+
+/* Hero heading block */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+h1 {
+  font-family: "Cormorant Garamond";
+  font-weight: lighter;
+  font-size: 100px;
+}
+
+p {
+  font-family: "Poppins";
+  font-weight: normal;
+}
+
+.subtitle {
+  font-family: "Poppins";
+  font-weight: lighter;
+}
+
+.line-subtitle {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.divider {
+  flex: 1; height: 1px; background: #ddd; border: none;
+}
+.subtitle {
+  margin-left: 1rem; color: #666; white-space: nowrap;
+}
+
+/* Description at bottom of left column */
+.desc-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.desc-text p {
+  margin: 0;
+  max-width: 40ch;
+  line-height: 1.6;
+}
+
+/* RIGHT COLUMN: your GIF */
+.hero-media {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-media img {
+  max-width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ─── RESPONSIVE: stack on mobile ───────────────────── */
+@media (max-width: 768px) {
+  .art-content {
+    flex-direction: column;
+  }
+  .hero-media {
+    margin-top: 1.5rem;
+  }
+  .hero-text h1 {
+    font-size: 8vw;
+  }
+}
