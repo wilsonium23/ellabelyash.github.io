@@ -47,5 +47,19 @@
     </a>
   </div>
 
+  <script>
+  // only on narrow screens
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    const panels = document.querySelectorAll('.panel');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // toggle .active when in view
+        entry.target.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+    panels.forEach(panel => io.observe(panel));
+  }
+</script>
+  
 </body>
 </html>
