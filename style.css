@@ -291,5 +291,21 @@ body {
   .panel.active::before {
     transform: translateY(0) !important;
   }
+   /* always show the label in black on the blank panel */
+  .panel .label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #000 !important;
+    opacity: 1 !important;
+    pointer-events: none;
+    transition: color 0.3s ease;
+    z-index: 2;
+  }
+
+  /* once active (image revealed), switch to white */
+  .panel.active .label {
+    color: #fff !important;
+  }
 }
 
