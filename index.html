@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hover Panels</title>
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELLA BELYASH</title>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
   
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Matangi:wght@300..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- NAVIGATION BAR -->
   <nav class="navbar">
     <div class="brand">
-      <a href="#">ella belyash</a>
+      <a href="#">ELLA BELYASH</a>
     </div>
     <div class="dropdown">
       <button class="hamburger">☰</button>
@@ -33,7 +37,7 @@
       <span class="label">ABOUT</span>
     </a>
     <a href="art.html" class="panel" id="art">
-      <span class="label">ART</span>
+      <span class="label">ART PROJECTS</span>
     </a>
     <a href="blog.html" class="panel" id="blog">
       <span class="label">BLOG</span>
@@ -43,31 +47,5 @@
     </a>
   </div>
 
-<script>
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    const panels = document.querySelectorAll('.panel');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // add .active when IN VIEW, remove when OUT
-        entry.target.classList.toggle('active', entry.isIntersecting);
-      });
-    }, { threshold: 0.8 });
-
-    panels.forEach(panel => io.observe(panel));
-  }
-</script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn  = document.querySelector('.hamburger');
-    const menu = document.querySelector('.dropdown-menu');
-    if (!btn || !menu) return;  // sanity-check
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
-  });
-</script>
-  
 </body>
 </html>
