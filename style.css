@@ -9,7 +9,7 @@
 
 /* the hamburger button */
 .hamburger {
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-size: 1.5rem;
   background: none;
   border: none;
@@ -47,10 +47,11 @@
 .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1rem;
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-weight: 600;
   color: #333;
   text-decoration: none;
+  letter-spacing: 3px;
 }
 
 .dropdown-menu li a:hover {
@@ -92,13 +93,14 @@
 /* ─── BRAND ───────────────────────────────────────────── */
 
 .brand a {
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-weight: 500;           /* same as menu items */
   font-size: 28px;            /* match your nav font-size */
   color: #333;
   text-decoration: none;      /* remove underline */
   line-height: 1;
   padding: 0.5rem 0;          /* center vertically */
+  letter-spacing: 5px;
 }
 
 .nav-list {
@@ -109,7 +111,7 @@
 
 .nav-list a {
   text-decoration: none;
-  font-family: "Raleway", sans-serif;
+  font-family: "Matangi", sans-serif;
   font-weight: 600;
   color: #333;
   transition: color 0.2s ease;
@@ -121,7 +123,7 @@
 
 body, html {
   height: 100%;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Railway', sans-serif;
   magin: 0;
 }
 
@@ -160,12 +162,13 @@ body {
   bottom: 30px;
   right: 20px;
   color: #000;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   text-align: right;
   background-color: transparent;
   z-index: 2;
-  font-family: "Raleway";
+  font-family: "Matangi";
+  letter-spacing: 5px;
 }
 
 .panel:hover .label {
@@ -183,43 +186,37 @@ body {
 
 /* Add background images on hover 
 #about:hover {
-  background-image: url("about4.JPG");
+  background-image: url('../images/about4.jpg');
 }
 
 #art:hover {
-  background-image: url("contact2.JPG");
+  background-image: url('../images/art2.jpg');
 }
 
 #blog:hover {
-  background-image: url("blog5.JPG");
+  background-image: url('../images/blog5.jpg');
 }
 
 #contact:hover {
-  background-image: url("art2.jpg");
+  background-image: url('../images/contact2.jpg');
 }
 
 */
 
 
-@media (hover: hover) {
+/* ART slides _down_ instead */
+#art::before {
+  transform: translateY(-100%);
+}
+#art:hover::before {
+  transform: translateY(0);
+}
 
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  /* only on desktop/hover devices do art+contact slide _down_ */
-  #art::before {
-    transform: translateY(-100%);
-  }
-  #art:hover::before {
-    transform: translateY(0);
-  }
-
-  #contact::before {
-    transform: translateY(-100%);
-  }
-  #contact:hover::before {
-    transform: translateY(0);
-  }
+#contact::before {
+  transform: translateY(-100%);
+}
+#contact:hover::before {
+  transform: translateY(0);
 }
 
 .panel {
@@ -228,7 +225,6 @@ body {
   overflow: hidden;     /* clip the sliding image */
   background-color: #fff;/* white rest state */
 }
-
 
 /* sliding‐in layer, starts below */
 .panel::before {
@@ -242,18 +238,12 @@ body {
   z-index: 1;                 /* below your .label (z-index:2) */
 }
 
-#about::before {
-  background-image: url("about4.JPG");
-}
-#art::before {
-  background-image: url("contact2.JPG");
-}
-#blog::before {
-  background-image: url("blog5.JPG");
-}
-#contact::before {
-  background-image: url("art2.jpg");
-}
+#about::before  { background-image: url("about4.JPG"); }
+#art::before    { background-image: url("art2.jpg"); }
+#blog::before   { background-image: url("blog5.JPG"); }
+#contact::before{ background-image: url("contact2.JPG"); }
+
+
 
 /* Optional: fade-in effect
 .panel::after {
@@ -272,67 +262,42 @@ body {
 */
 
 @media (max-width: 768px) {
-  /* 1) Stack panels vertically */
+  /* 1. Stack panels vertically */
   .container {
     flex-direction: column;
-    height: auto;
-  }
-
-  /* shrink the logo text on mobile only */
-  .brand a {
-    font-size: 22px; 
+    height: auto;       /* page scrolls instead of being fixed */
   }
   .panel {
-    flex: none;
-    width: 100%;
-    height: 50vh;
-    border-left: none;
+    flex: none;         /* don’t stretch equally any more */
+    width: 100%;        /* full-width row */
+    height: 50vh;       /* adjust to taste (50% viewport height) */
+    border-left: none;  /* remove vertical divider */
     border-top: 1px solid #e0e0e0;
-    overflow: hidden;
-    position: relative;
   }
   .panel:first-child {
     border-top: none;
   }
 
-  /* 2) Labels always visible in black on white */
-  .panel .label {
-    display: block !important;
-    visibility: visible !important;
-    position: absolute;
-    z-index: 10 !important;
-    bottom: 10px;
-    right: 10px;
-    color: #000 !important;
-    opacity: 1 !important;
-    pointer-events: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-  }
+  /* 2. Show the images directly (no hover) */
+  #about   { background-image: url("about4.JPG"); }
+  #art     { background-image: url("art2.jpg"); }
+  #blog    { background-image: url("blog5.JPG"); }
+  #contact { background-image: url("contact2.JPG"); }
 
-  /* 3) Pseudo‐element for the image, forced off-screen below */
-  .panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+  /* keep sizing/positioning */
+  .panel {
     background-size: cover;
     background-position: center;
-    /* this !important overrides the desktop #art/#contact rules */
-    transform: translateY(100%) !important;
-    transition: transform 0.8s ease;
-    z-index: 1;
   }
-  /* your four images (you can leave these outside the media-query too) */
-  #about::before   { background-image: url("about4.JPG"); }
-  #art::before     { background-image: url("contact2.JPG"); }
-  #blog::before    { background-image: url("blog5.JPG"); }
-  #contact::before { background-image: url("art2.jpg"); }
 
-  /* 4) When .active is toggled, slide it up AND flip the label to white */
-  .panel.active::before {
-    transform: translateY(0) !important;
-  }
-  .panel.active .label {
-    color: #fff !important;
+  /* 3. Labels stay visible & readable */
+  .label {
+    color: white;      /* or black, whatever contrasts best */
+    opacity: 0.8;
+    bottom: 10px;      /* tweak for smaller panels */
+    right: 10px;
+    left: auto;        /* reset any desktop-only left shift */
+    text-align: right;
   }
 }
+
