@@ -24,7 +24,7 @@
   
   </head>
 
-<body>
+  <body>
 
   <!-- NAVIGATION BAR -->
   <nav class="navbar">
@@ -44,31 +44,62 @@
   <!-- ENDS HERE -->
 
   <!-- ─── MAIN CONTENT ─────────────────────────────────── -->
-  <main class="art-content">
-  <!-- LEFT SIDE: heading + description stacked -->
-  <div class="left">
-    <div class="hero-text">
-      <h1>art<br>projects</h1>
-      <div class="line-subtitle">
-        <hr class="divider">
-        <span class="subtitle">from 2013 — 2025</span>
+  <main class="art-page">
+
+     <!-- 1) HERO (heading + desc + gif in one flex) -->
+  <section class="art-hero">
+    <div class="hero-left">
+      <!-- your big “art projects” + line/subtitle -->
+      <div class="hero-text">
+        <h1>art<br>projects</h1>
+        <div class="line-subtitle">
+          <hr class="divider">
+          <span class="subtitle">from 2013 — 2025</span>
+        </div>
+      </div>
+      <!-- move your description in here: -->
+      <div class="hero-desc">
+        <p>
+          For over 12 years, I’ve been capturing people, places, and perspectives
+          and reflecting them in my art—whether paintings, sketches, sculptures,
+          or any medium that channels my emotions.
+        </p>
       </div>
     </div>
 
-    <div class="desc-text">
-      <p>
-        For over 12 years, I’ve been capturing people, places, and perspectives
-        through film and digital photography. My favorite projects are people-
-        related.
-      </p>
+    <!-- the gif stays on the right -->
+    <div class="hero-media">
+      <img src="paint1.gif" alt="Animated art process">
     </div>
-  </div>
-
-  <!-- RIGHT SIDE: the GIF -->
-  <div class="hero-media">
-    <img src="paint1.gif" alt="Animated art process">
-  </div>
-</main>
+  </section>
+  
+    <!-- 3) CATALOG -->
+    <section class="catalog-section">
+      <div class="catalog-header">
+        <span class="catalog-title">catalog</span>
+        <span class="catalog-date">2023</span>
+      </div>
+      <div class="catalog-grid">
+        <div class="catalog-image">
+          <img src="painting1.jpg" alt="Art piece 1">
+        </div>
+        <div class="catalog-image">
+          <img src="painting2.jpg" alt="Art piece 2">
+        </div>
+        <div class="catalog-bio">
+          <p class="bio-caption">bio information</p>
+          <h2 class="bio-title">this will end good</h2>
+          <p class="bio-text">
+            Truth in artistry, artistry in truth. This is the fine balance I 
+            strive to achieve in my work, where photography is so much more 
+            than mere documentation. To me, a picture must inspire a thousand 
+            words; it must spur discussion, trigger reflection, or surface 
+            emotions.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   
 </body>
