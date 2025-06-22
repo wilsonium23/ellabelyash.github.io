@@ -56,7 +56,7 @@
         // toggle .active when in view
         entry.target.classList.toggle('active', entry.isIntersecting);
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.7 });
     panels.forEach(panel => io.observe(panel));
   }
 </script>
