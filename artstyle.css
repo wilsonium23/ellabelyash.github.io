@@ -10,9 +10,6 @@
   --line: #ddd;
   --text: #333;
   --muted: #666;
-  --font-sans: 'Poppins', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --font-display: 'Cormorant Garamond', serif;
 }
 
 /* reset + box-sizing */
@@ -117,6 +114,8 @@ img {
   z-index: 10;
 }
 
+/* ─── BRAND ───────────────────────────────────────────── */
+
 .brand a {
   font-family: "Matangi", sans-serif;
   font-weight: 500;           /* same as menu items */
@@ -125,9 +124,26 @@ img {
   text-decoration: none;      /* remove underline */
   line-height: 1;
   padding: 0.5rem 0;          /* center vertically */
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;                      /* space between items */
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-family: "Matangi", sans-serif;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #000;
+}
 
 /*──────────────────────────────────────────────────────────────────────────────
   HERO (art projects + GIF)
@@ -147,7 +163,7 @@ img {
   justify-content: space-between;
 }
 .hero-text h1 {
-  font-family: var(--font-serif);
+  font-family: "Cormorant Garamond";
   font-size: 6vw;
   line-height: 1.1;
   text-transform: lowercase;
@@ -173,6 +189,7 @@ img {
 .hero-desc p {
   max-width: 60ch;
   margin-top: var(--gap);
+  font-family: Poppins;
 }
 .hero-media {
   flex: 1;
@@ -189,13 +206,14 @@ p {
   text-align: justify;
 }
 
+
 /*──────────────────────────────────────────────────────────────────────────────
   CATALOG
 ──────────────────────────────────────────────────────────────────────────────*/
 .catalog-section {
-  max-width: var(--max-w);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem var(--gutter);
+  padding: 2rem 1rem;
 }
 .catalog-header {
   display: grid;
@@ -203,6 +221,7 @@ p {
   align-items: center;
   border-bottom: 1px solid var(--line);
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .catalog-title {
   justify-self: start;
@@ -231,13 +250,15 @@ p {
   text-transform: lowercase;
   color: var(--muted);
   font-size: .875rem;
+  font-family: Poppins;
 }
 .bio-title {
-  font-family: var(--font-serif);
+  font-family: "Cormorant Garamond";
   font-size: 1.5rem;
 }
 .bio-text {
   max-width: 30ch;
+  font-family: Poppins;
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
