@@ -211,13 +211,32 @@ p {
 
 /* ─── RESPONSIVE: stack on mobile ───────────────────── */
 @media (max-width: 768px) {
+  /* Stack the two columns */
   .art-content {
     flex-direction: column;
   }
-  .hero-media {
-    margin-top: 1.5rem;
+
+  /* Reset left column positioning */
+  .left {
+    position: static;
+    padding: 0;
   }
-  .hero-text h1 {
-    font-size: 8vw;
+
+  /* Restore normal flow for hero-text and desc-text */
+  .hero-text,
+  .desc-text {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: auto !important;
+    margin: 1rem 0;      /* give some breathing room */
+  }
+
+  /* Space before the GIF */
+  .hero-media {
+    margin-top: 2rem;
+    justify-content: center;  /* center on narrow screens */
   }
 }
+
