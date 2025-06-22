@@ -77,14 +77,16 @@ img {
 .dropdown-menu.open {
   display: block;
 }
-.dropdown-menu a {
+.dropdown-menu li a {
   display: block;
   padding: 0.5rem 1rem;
-  font-family: 'Matangi', serif;
-  color: var(--text);
+  font-family: "Matangi", sans-serif;
+  font-weight: 600;
+  color: #333;
   text-decoration: none;
   letter-spacing: 3px;
 }
+
 .dropdown-menu a:hover {
   background: #f5f5f5;
 }
